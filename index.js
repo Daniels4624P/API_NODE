@@ -6,7 +6,7 @@ const port = 3000
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/errorHandler')
 
 app.use(express.json())
-const whitelist = ['http://localhost:5500']
+const whitelist = ['http://localhost:5500', 'https://api-node-7f5c.onrender.com']
 const options = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin)) {
