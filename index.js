@@ -9,7 +9,7 @@ app.use(express.json())
 const whitelist = ['https://api-node-7f5c.onrender.com']
 const options = {
   origin: (origin, callback) => {
-    if (whitelist.includes(origin)) {
+    if (whitelist.includes(origin) || !origin) {
       callback(null, true)
     } else {
       callback(new Error('No permitido'))
